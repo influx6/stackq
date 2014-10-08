@@ -9,7 +9,7 @@ structs.JzGroup('Class specifications',function(_){
 
   var berry = fruit.extends({
     squeeze: function(){
-      return fruit.prototype.squeeze.apply(this,arguments);
+      return this.$super();
     }
   });
 
@@ -22,7 +22,7 @@ structs.JzGroup('Class specifications',function(_){
 
   _('can i create a fruit',function($){
     $.sync(function(m){
-      var ft = new m();
+      var ft = m.make();
       structs.Expects.isFunction(m);
       structs.Expects.isObject(ft);
       structs.Expects.isTrue(ft.squeeze());
@@ -31,18 +31,19 @@ structs.JzGroup('Class specifications',function(_){
 
   _('can i create a berry fruit',function($){
     $.sync(function(m){
-      var ft = new m();
+      var ft = m.make();
       structs.Expects.isFunction(m);
       structs.Expects.isObject(ft);
       structs.Expects.isTrue(ft.squeeze());
     });
   }).use(berry);
 
-  _('can i extend a berryfuit',function($){
+  _('can i extend a berryfuit to whiteberry',function($){
     $.sync(function(m){
-      var ft = new m();
+      var ft = m.make();
       structs.Expects.isFunction(m);
       structs.Expects.isObject(ft);
+      structs.Expects.isTrue(ft.isWhite());
       structs.Expects.isFalse(ft.squeeze());
     });
   }).use(whiteBerry);

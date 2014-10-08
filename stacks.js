@@ -6,7 +6,14 @@ module.exports = {
   'streams': as.Streams,
   'ascontrib':as,
   'structs': structs,
+
+  //useful bits
   'Class': as.funcs.bind(structs.Class,structs),
   'Jazz': as.funcs.bind(structs.JzGroup,structs),
-  'Expects': structs.Expects
+  'Expects': structs.Expects,
+  'Utility': as.AppStack.Utility,
+  'Enums': as.enums,
+  'Funcs': as.funcs,
+  'Tags': as.tags,
+  'Notify': as.notify
 }
