@@ -1,5 +1,5 @@
 {
-  "name": "stacks",
+  "name": "stack-packs",
   "version": "0.0.3",
   "description": "utility chain with classes,events,promises,etc",
   "main": "./stacks.js",
