@@ -13,6 +13,7 @@ module.exports = {
   'Expects': structs.Expects,
   'Utility': as.AppStack.Utility,
   'Enums': as.enums,
+  'Valids': as.valids,
   'Funcs': as.funcs,
   'Tags': as.tags,
   'Notify': as.notify
