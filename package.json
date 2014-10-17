@@ -1,17 +1,17 @@
 {
-  "name": "stack-packs",
+  "name": "stackq",
   "version": "0.0.3",
   "description": "utility chain with classes,events,promises,etc",
-  "main": "./stacks.js",
+  "main": "./stackq.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "as"
+    "utility belt"
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/influx6/stack"
+    "url": "http://github.com/influx6/stacks"
   },
   "author": "Alexander Ewetumo",
   "license": "mit"
