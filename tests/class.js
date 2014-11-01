@@ -1,4 +1,4 @@
-var stacks = require('../stacks');
+var stacks = require('../stackq');
 var structs = stacks.structs;
 
 structs.JzGroup('Class specifications',function(_){

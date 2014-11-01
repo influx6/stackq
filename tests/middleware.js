@@ -1,4 +1,4 @@
-var stacks = require('../stacks.js');
+var stacks = require('../stackq.js');
 
 var q = stacks.structs.WorkQueue();
 var final = function(f){

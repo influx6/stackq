@@ -1,4 +1,4 @@
-var stacks = require('../stacks.js');
+var stacks = require('../stackq.js');
 var structs = stacks.structs;
 
 var gd = structs.GreedQueue();
