@@ -17,7 +17,7 @@ stacks.JzGroup('Scheme specifications',function(_){
       vas.name = 'flappy';
       console.log('seted',vas.name);
       vas.name = 1;
-      console.log('seted',vas.name);
+      console.log('seted',vas.name_scheme);
     });
 
     $.for(vas);
