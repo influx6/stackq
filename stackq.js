@@ -21,7 +21,7 @@ module.exports = as;
   // 'Class': as.funcs.bind(structs.Class,structs),
   // 'Jazz': as.funcs.bind(structs.JzGroup,structs),
   // 'Expects': structs.Expects,
-  // 'Utility': as.Utility,
+  // 'Utility': as.Util,
   // 'Enums': as.enums,
   // 'Valids': as.valids,
   // 'Funcs': as.funcs,
