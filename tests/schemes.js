@@ -22,11 +22,6 @@ stacks.JzGroup('Scheme specifications',function(_){
     comments: {'1': 1},
   };
 
-
-  vas.validate(tas,function(f,r){
-    console.log('vas report:',f,r);
-  });
-
   _('can i test schema',function($){
 
     $.sync(function(m){
@@ -43,11 +38,10 @@ stacks.JzGroup('Scheme specifications',function(_){
   _('can i validate with a schema',function($){
 
     $.async(function(m,nxt,g){
-      nxt();
-      // vas.validate(tas,g(function(f){
-      //   console.log('deed it go well',f);
-      //   structs.Expects.truthy(f);
-      // }));
+      m.validate(tas,g(function(f){
+        structs.Expects.falsy(f);
+      }));
+      return nxt();
     });
 
     $.for(vas);
