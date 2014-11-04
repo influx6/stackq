@@ -8,7 +8,7 @@ stacks.JzGroup('StreamSelect specifications',function(_){
   block.emit(3);
   block.emit(4);
 
-  var select = stacks.StreamSelect(false,block);
+  var select = stacks.StreamSelect.make(false,block);
 
   _('is it a valid stream select instance',function($){
 
