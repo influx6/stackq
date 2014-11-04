@@ -12,11 +12,15 @@ stacks.JzGroup('Stream specifications',function(_){
     });
 
     $.async(function(m,next,g){
-      next();
       m.on(g(function(f){
-        structs.Expects.isNumber(m);
+        structs.Expects.isNumber(f);
       }));
       m.emit(1);
+      m.pause();
+      m.emit(2);
+      m.emit(3);
+      m.resume();
+      next();
     });
 
     $.for(block);
