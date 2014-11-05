@@ -24,12 +24,11 @@ stacks.JzGroup('StreamSelect specifications',function(_){
   _('can i get a single item',function($){
 
     var one = select.$.one();
-
     $.async(function(m,next,g){
+      next();
       m.on(g(function(i){
         structs.Expects.isNumber(i);
       }));
-      return next();
     });
 
     $.for(one);
@@ -41,10 +40,10 @@ stacks.JzGroup('StreamSelect specifications',function(_){
     var all = select.$.all();
 
     $.async(function(m,next,g){
+      next();
       m.on(g(function(i){
         structs.Expects.isNumber(i);
       }));
-      return next();
     });
 
     $.for(all);

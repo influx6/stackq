@@ -1,6 +1,6 @@
 {
   "name": "stackq",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "utility chain with classes,events,promises,etc",
   "main": "./stackq.js",
   "scripts": {
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/influx6/stacks"
+    "url": "http://github.com/influx6/stackq"
   },
   "author": "Alexander Ewetumo",
   "license": "mit"
