@@ -11,6 +11,11 @@ stacks.JzGroup('Scheme specifications',function(_){
     'post*': {
       name: 'string',
       content: 'string'
+    },
+    'wallet':'sucks'
+  },{
+    wallet:{
+      copy: true
     }
   });
 
@@ -20,6 +25,7 @@ stacks.JzGroup('Scheme specifications',function(_){
     class:'CS 2013',
     post:{ name: 'alex',content: 'slick'},
     comments: {'1': 1},
+    wallet: 'sucks',
   };
 
   _('can i test schema',function($){
