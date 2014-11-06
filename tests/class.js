@@ -1,9 +1,8 @@
 var stacks = require('../stackq');
-var structs = stacks.structs;
 
-structs.JzGroup('Class specifications',function(_){
+stacks.JzGroup('Class specifications',function(_){
 
-  var fruit = structs.Class({
+  var fruit = stacks.Class({
     squeeze: function(){ return true; }
   });
 
@@ -23,28 +22,28 @@ structs.JzGroup('Class specifications',function(_){
   _('can i create a fruit',function($){
     $.sync(function(m){
       var ft = m.make();
-      structs.Expects.isFunction(m);
-      structs.Expects.isObject(ft);
-      structs.Expects.isTrue(ft.squeeze());
+      stacks.Expects.isFunction(m);
+      stacks.Expects.isObject(ft);
+      stacks.Expects.isTrue(ft.squeeze());
     });
   }).use(fruit);
 
   _('can i create a berry fruit',function($){
     $.sync(function(m){
       var ft = m.make();
-      structs.Expects.isFunction(m);
-      structs.Expects.isObject(ft);
-      structs.Expects.isTrue(ft.squeeze());
+      stacks.Expects.isFunction(m);
+      stacks.Expects.isObject(ft);
+      stacks.Expects.isTrue(ft.squeeze());
     });
   }).use(berry);
 
   _('can i extend a berryfuit to whiteberry',function($){
     $.sync(function(m){
       var ft = m.make();
-      structs.Expects.isFunction(m);
-      structs.Expects.isObject(ft);
-      structs.Expects.isTrue(ft.isWhite());
-      structs.Expects.isFalse(ft.squeeze());
+      stacks.Expects.isFunction(m);
+      stacks.Expects.isObject(ft);
+      stacks.Expects.isTrue(ft.isWhite());
+      stacks.Expects.isFalse(ft.squeeze());
     });
   }).use(whiteBerry);
 

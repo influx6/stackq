@@ -2,7 +2,7 @@ var as = {};
 require('./lib/as.js')(as);
 require('./lib/as-contrib.js')(as);
 require('./lib/ds.js')(as);
-require('./lib/streams.js')(as);
+// require('./lib/streams.js')(as);
 require('./lib/structs.js')(as);
 require('./lib/schemes.js')(as);
 

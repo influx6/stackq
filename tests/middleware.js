@@ -1,6 +1,6 @@
 var stacks = require('../stackq.js');
 
-var q = stacks.structs.WorkQueue();
+var q = stacks.WorkQueue();
 var final = function(f){
   console.log('final call',f);
 };
@@ -26,7 +26,7 @@ q.emit(4);
 q.emit(6);
 q.emit(7);
 
-var contract = stacks.structs.Contract('alex');
+var contract = stacks.Contract('alex');
 var messagePicker = function(m){ return m['message']; };
 contract.onPass(function(i){ console.log('passed',i); });
 contract.oncePass(function(i){ console.log('once passed',i); });

@@ -1,7 +1,6 @@
-var stacks = require('../stackq.js');
-var structs = stacks.structs;
+var core = require('../stackq.js');
 
-var gd = structs.GreedQueue();
+var gd = core.GreedQueue();
 
 var bd = gd.queue(function(f){
   /*console.log('will it be love',f);*/

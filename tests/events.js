@@ -2,9 +2,10 @@ var stacks = require('../stackq');
 
 stacks.JzGroup('Stream specifications',function(_){
 
-  var block = stacks.Stream.make();
+  var block = stacks.EventStream.make();
+  block.events('data');
 
-  _('can i test stream',function($){
+  _('can i test events',function($){
 
     $.sync(function(m){
       stacks.Expects.truthy(m);
@@ -12,15 +13,11 @@ stacks.JzGroup('Stream specifications',function(_){
     });
 
     $.async(function(m,next,g){
-      next();
-      m.on(g(function(f){
-        stacks.Expects.isNumber(f);
+      m.on('data',g(function(f){
+        stacks.Expects.isString(f);
       }));
-      m.emit(1);
-      m.pause();
-      m.emit(2);
-      m.emit(3);
-      m.resume();
+      m.emit('data','alex');
+      next();
     });
 
     $.for(block);

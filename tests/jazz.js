@@ -5,7 +5,7 @@ stacks.JzGroup('Jazz specifications',function(_){
   _('can i test jazz',function($){
 
     $.sync(function(m){
-      structs.Expects.isString(m);
+      stacks.Expects.isString(m);
     });
 
   }).use('1');
@@ -14,7 +14,7 @@ stacks.JzGroup('Jazz specifications',function(_){
   _('can i test statements',function($){
 
     $.sync(function(m){
-      structs.Expects.isMust(m,statement);
+      stacks.Expects.isMust(m,statement);
     });
 
   }).use(statement);

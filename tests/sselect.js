@@ -13,8 +13,8 @@ stacks.JzGroup('StreamSelect specifications',function(_){
   _('is it a valid stream select instance',function($){
 
     $.sync(function(m){
-      structs.Expects.truthy(m);
-      structs.Expects.isTrue(stacks.Stream.isType(m));
+      stacks.Expects.truthy(m);
+      stacks.Expects.isTrue(stacks.Stream.isType(m));
     });
 
     $.for(block);
@@ -27,7 +27,7 @@ stacks.JzGroup('StreamSelect specifications',function(_){
     $.async(function(m,next,g){
       next();
       m.on(g(function(i){
-        structs.Expects.isNumber(i);
+        stacks.Expects.isNumber(i);
       }));
     });
 
@@ -42,7 +42,7 @@ stacks.JzGroup('StreamSelect specifications',function(_){
     $.async(function(m,next,g){
       next();
       m.on(g(function(i){
-        structs.Expects.isNumber(i);
+        stacks.Expects.isNumber(i);
       }));
     });
 

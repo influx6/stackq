@@ -31,10 +31,10 @@ stacks.JzGroup('Scheme specifications',function(_){
   _('can i test schema',function($){
 
     $.sync(function(m){
-      structs.Expects.truthy(m);
+      stacks.Expects.truthy(m);
       vas.name = 'thunder';
-      structs.Expects.truthy(m.name);
-      structs.Expects.truthy(m.validate);
+      stacks.Expects.truthy(m.name);
+      stacks.Expects.truthy(m.validate);
     });
 
     $.for(vas);
@@ -45,7 +45,7 @@ stacks.JzGroup('Scheme specifications',function(_){
 
     $.async(function(m,nxt,g){
       m.validate(tas,g(function(f){
-        structs.Expects.falsy(f);
+        stacks.Expects.falsy(f);
       }));
       return nxt();
     });
