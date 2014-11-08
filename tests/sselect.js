@@ -3,6 +3,7 @@ var stacks = require('../stackq');
 stacks.JzGroup('StreamSelect specifications',function(_){
 
   var block = stacks.Stream.make();
+
   block.emit(1);
   block.emit(2);
   block.emit(3);
@@ -50,4 +51,18 @@ stacks.JzGroup('StreamSelect specifications',function(_){
 
   });
 
+  _('can i get all items as a list',function($){
+
+    var all = select.$.list();
+
+    $.async(function(m,next,g){
+      m.on(g(function(i){
+        stacks.Expects.isList(i);
+      }));
+      next();
+    });
+
+    $.for(all);
+
+  });
 });
