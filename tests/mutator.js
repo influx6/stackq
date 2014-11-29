@@ -30,7 +30,7 @@ stacks.JzGroup('Mutator specifications',function(_){
     }).use(i);
   });
 
-  m.add(function(i){return i*4;});
+  m.add(function(i){return stacks.MutatorArgs.make(i*4);});
   m.add(function(i){
     _('can i mutate values with *4',function($){
       $.sync(function(m){
