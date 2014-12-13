@@ -3,8 +3,8 @@ _.Jazz('Stream specifications',function(k){
 
   var val = _.Future.value('alex');
   var then = _.Future.ms(function(){
-      throw "socker";
-  },10000);
+      throw new Error("socker");
+  },1000);
   var codethen = _.Future.wait(val,then);
 
   var fs = _.FutureStream.make();
@@ -17,9 +17,9 @@ _.Jazz('Stream specifications',function(k){
     console.log('getting data count:',f);
   });
 
-  fs.stream().emit('alex');
+  fs.in().emit('alex');
   fs.completeError(new Error('sorry'));
-  fs.stream().emit('wonder');
+  fs.in().emit('wonder');
 
 
   k('can i create a future',function($){
@@ -40,7 +40,7 @@ _.Jazz('Stream specifications',function(k){
   k('can i fail a future',function($){
     $.sync(function(m,g){
       m.onError(g(function(f){
-        _.Expects.is(f,'socker');
+        _.Expects.isInstanceOf(f,Error);
       }));
     });
   }).use(then);
@@ -48,7 +48,7 @@ _.Jazz('Stream specifications',function(k){
   k('can i wait for a set of future',function($){
     $.sync(function(m,g){
       m.onError(g(function(f){
-        _.Expects.is(f,'socker');
+        _.Expects.isInstanceOf(f,Error);
       }));
     });
   }).use(codethen);
