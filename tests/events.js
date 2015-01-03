@@ -1,6 +1,6 @@
 var stacks = require('../stackq');
 
-stacks.JzGroup('Stream specifications',function(_){
+stacks.Jazz('Stream specifications',function(_){
 
   var block = stacks.EventStream.make();
   block.events('data');
