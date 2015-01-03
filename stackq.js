@@ -3,8 +3,8 @@ require('./lib/as.js')(as);
 require('./lib/as-contrib.js')(as);
 require('./lib/ds.js')(as);
 // require('./lib/streams.js')(as);
-require('./lib/structs.js')(as);
-require('./lib/schemes.js')(as);
+require('./lib/extenders.js')(as);
+// require('./lib/schemes.js')(as);
 
 module.exports = as;
 // var structs = require('./lib/structs.js');
