@@ -19,6 +19,20 @@ stacks.JzGroup('Class specifications',function(_){
     }
   });
 
+  var redwhiteberry = whiteBerry.extends({});
+
+  _('is redwhiteberry a fruit',function($){
+    $.sync(function(m){
+      stacks.Expects.isTrue(fruit.isChild(m));
+    });
+  }).use(redwhiteberry);
+
+  _('is a redwhiteberry instance a fruit',function($){
+    $.sync(function(m){
+      stacks.Expects.isTrue(fruit.isChildInstance(m));
+    });
+  }).use(redwhiteberry.make());
+
   _('can i create a fruit',function($){
     $.sync(function(m){
       var ft = m.make();
