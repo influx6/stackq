@@ -21,6 +21,7 @@ stacks.JzGroup('Stream specifications',function(_){
       m.emit(2);
       m.emit(3);
       m.resume();
+      m.endData();
     });
 
     $.for(block);
