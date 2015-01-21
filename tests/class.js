@@ -1,6 +1,6 @@
 var stacks = require('../stackq');
 
-stacks.JzGroup('Class specifications',function(_){
+stacks.Jazz('Class specifications',function(_){
 
   var fruit = stacks.Class({
     squeeze: function(){ return true; }
