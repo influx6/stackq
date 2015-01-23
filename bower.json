@@ -1,0 +1,24 @@
+{
+  "name": "stackq",
+  "main": "stackq.js",
+  "version": "0.2.1",
+  "authors": [
+    "Alexander Ewetumo <trinoxf@gmail.com>"
+  ],
+  "description": "a set of utlities and classes",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "stackq"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/influx/stackq",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
