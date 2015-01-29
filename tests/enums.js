@@ -37,3 +37,12 @@ console.log(foundBy({
   day: 'saturday',
   color: 'green'
 }));
+
+
+var a = { a:1, b: { f: { c:4, g: { f:20 } } } };
+var pluck = _.enums.pluckWhile(a,function(v,r,next,d){
+  return next();
+});
+
+_.Asserted((20 === pluck(['b','f','g','f'])),'value must be 20');
+_.Asserted(('boo' === pluck(['b','f','c','f'],'boo')),'value must be boo');

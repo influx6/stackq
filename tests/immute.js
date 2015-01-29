@@ -1,19 +1,13 @@
 var _ = require('../stackq');
 _.Jazz('Immutate specifications',function(k){
 
-  var single = _.Immutate.value('alex');
-
-  k('can i create a single value immutate',function($){
-    $.sync(function(m){
-      _.Expects.isTrue(_.Immutate.instanceBelongs(m));
-      _.Expects.isObject(m.toObject());
-      _.Expects.is(_.enums.pluckIn(m.toObject(),['value']),'alex');
-      _.Expects.isTrue(m.has('value'));
-    });
-  }).use(single);
 
   var map = { a:1, b: 2, c: { e: 3 } };
   var atom = _.Immutate.value(map);
+  var risk = _.Immutate.value([1,3,4,5,6]);
+
+  var cmap = atom.get('c');
+  var acs = atom.get('c.e');
 
   k('can i create a object immutate',function($){
     $.sync(function(m){
@@ -22,7 +16,6 @@ _.Jazz('Immutate specifications',function(k){
     });
   }).use(atom);
 
-  var acs = atom.get('c.e');
 
   k('can i create a immutate cursor',function($){
     $.sync(function(m){
@@ -31,7 +24,6 @@ _.Jazz('Immutate specifications',function(k){
     });
   }).use(acs);
 
-  var cmap = atom.get('c');
 
   k('is atom.toJS a real clone?',function($){
     $.sync(function(m){
@@ -54,5 +46,17 @@ _.Jazz('Immutate specifications',function(k){
       _.Expects.is(m.e,20);
     });
   }).use(cmap.value());
+  
+  cmap.set('b','rocker');
+
+  k('can i add value using cursors',function($){
+    $.sync(function(m){
+      _.Expects.is(m,'rocker');
+    });
+  }).use(cmap.get('b').value());
+
+  console.log('atom:',atom.toJS());
+  cmap.set('f',risk);
+  console.log('rk:',cmap.toJS());
 
 });
