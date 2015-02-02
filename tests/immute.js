@@ -1,28 +1,28 @@
 var _ = require('../stackq');
 _.Jazz('Immutate specifications',function(k){
 
-
-  var map = { a:1, b: 2, c: { e: 3 } };
-  var atom = _.Immutate.value(map);
+  var key = _.Immutate.value(1);
+  var atom = _.Immutate.value({a:1,b: 2,c: { e: 3 }});
   var risk = _.Immutate.value([1,3,4,5,6]);
 
+  var ac = atom.get();
   var cmap = atom.get('c');
   var acs = atom.get('c.e');
 
   k('can i create a object immutate',function($){
     $.sync(function(m){
       _.Expects.isTrue(_.Immutate.instanceBelongs(m));
-      _.Expects.is(m.toObject(),map);
+      _.Expects.is(m.toObject()['a'],1);
     });
   }).use(atom);
-
 
   k('can i create a immutate cursor',function($){
     $.sync(function(m){
       _.Expects.isTrue(_.ImmutateCursor.instanceBelongs(m));
-      _.Expects.is(m.value(),3);
+      _.Expects.isTrue(_.ValueCursor.instanceBelongs(m));
+      _.Expects.is(m.value(),1);
     });
-  }).use(acs);
+  }).use(key.get());
 
 
   k('is atom.toJS a real clone?',function($){
@@ -35,28 +35,27 @@ _.Jazz('Immutate specifications',function(k){
   
   k('can i get mutate value using cursors',function($){
     $.sync(function(m){
-      _.Expects.is(m.e,3);
+      _.Expects.is(m,3);
     });
-  }).use(cmap.value());
+  }).use(acs.value());
 
-  cmap.set('e',20);
+  acs.set(20);
 
   k('can i mutate value using cursors',function($){
     $.sync(function(m){
-      _.Expects.is(m.e,20);
+      _.Expects.is(m,20);
     });
-  }).use(cmap.value());
-  
-  cmap.set('b','rocker');
+  }).use(acs.value());
+ 
+  // cmap.set('b','rocker');
 
-  k('can i add value using cursors',function($){
-    $.sync(function(m){
-      _.Expects.is(m,'rocker');
-    });
-  }).use(cmap.get('b').value());
+  // k('can i add value using cursors',function($){
+  //   $.sync(function(m){
+  //     _.Expects.is(m,'rocker');
+  //   });
+  // }).use(cmap.get('b').value());
 
-  console.log('atom:',atom.toJS());
-  cmap.set('f',risk);
-  console.log('rk:',cmap.toJS());
+  // cmap.set('f',risk);
+  // console.log('rk:',cmap.toJS());
 
 });
