@@ -1,13 +1,12 @@
 var _ = require('../stackq');
 _.Jazz('Immutate specifications',function(k){
 
-  // var key = _.Immutate.value(1);
-  // var atom = _.Immutate.value({a:1,b: 2,c: { e: 3 }});
-  // var risk = _.Immutate.value([1,3,4,5,6]);
+  var key = _.Immutate.transform(1);
+  var atom = _.Immutate.transform({a:1,b: 2,c: { e: 3 }});
+  var risk = _.Immutate.transform([1,3,4,5,6]);
 
   // var r = _.Immutate.clone({ a: key, b: { c: 1 } });
 
-  console.log(r);
   
   // console.log(key.toMutable());
   // console.log(atom.toMutable());
