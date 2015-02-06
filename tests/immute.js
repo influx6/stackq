@@ -5,12 +5,9 @@ _.Jazz('Immutate specifications',function(k){
   var atom = _.Immutate.transform({a:1,b: 2,c: { e: 3 }});
   var risk = _.Immutate.transform([1,3,4,5,6]);
 
-  // var r = _.Immutate.clone({ a: key, b: { c: 1 } });
-
-  
-  // console.log(key.toMutable());
-  // console.log(atom.toMutable());
-  // console.log(risk.toMutable());
+  key.get().newSequence(function(x){
+    return x * 2;
+  });
 
   // var ac = atom.get();
   // var cmap = atom.get('c');
