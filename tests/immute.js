@@ -5,13 +5,17 @@ _.Jazz('Immutate specifications',function(k){
   var atom = _.Immutate.transform({a:1,b: 2,c: { e: 3 }});
   var risk = _.Immutate.transform([1,3,4,5,6]);
 
-  key.get().newSequence(function(x){
+  var ac = atom.get();
+  var cmap = atom.get('c');
+  var acs = cmap.get('c.e');
+  var kc = key.get();
+
+  kc.newSequence(function(x){
     return x * 2;
   });
 
-  // var ac = atom.get();
-  // var cmap = atom.get('c');
-  // var acs = atom.get('c.e');
+  console.log(cmap,acs);
+
 
   // k('can i create a object immutate',function($){
   //   $.sync(function(m){
