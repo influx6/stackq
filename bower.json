@@ -1,7 +1,7 @@
 {
   "name": "stackq",
   "main": "stackq.js",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "authors": [
     "Alexander Ewetumo <trinoxf@gmail.com>"
   ],
