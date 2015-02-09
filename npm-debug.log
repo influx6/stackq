@@ -1,0 +1,65 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/box/Lab/local/bin/node',
+1 verbose cli   '/Users/box/Lab/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'tcomb-validation',
+1 verbose cli   '-g' ]
+2 info using npm@2.0.0
+3 info using node@v0.11.14
+4 verbose cache add [ 'tcomb-validation', null ]
+5 verbose cache add spec="tcomb-validation" args=["tcomb-validation",null]
+6 verbose parsed spec { raw: 'tcomb-validation',
+6 verbose parsed spec   scope: null,
+6 verbose parsed spec   name: 'tcomb-validation',
+6 verbose parsed spec   rawSpec: '',
+6 verbose parsed spec   spec: '*',
+6 verbose parsed spec   type: 'range' }
+7 verbose parsed spec { raw: 'tcomb-validation',
+7 verbose parsed spec   scope: null,
+7 verbose parsed spec   name: 'tcomb-validation',
+7 verbose parsed spec   rawSpec: '',
+7 verbose parsed spec   spec: '*',
+7 verbose parsed spec   type: 'range' }
+8 verbose addNamed [ 'tcomb-validation', '*' ]
+9 verbose addNamed [ null, '*' ]
+10 silly lockFile c96f59bb-tcomb-validation tcomb-validation@*
+11 verbose lock tcomb-validation@* /Users/box/.npm/c96f59bb-tcomb-validation.lock
+12 silly addNameRange { name: 'tcomb-validation', range: '*', hasData: false }
+13 verbose mapToRegistry name tcomb-validation
+14 verbose mapToRegistry uri https://registry.npmjs.org/tcomb-validation
+15 verbose request on initialization, where is /tcomb-validation
+16 verbose request after pass 1, where is /tcomb-validation
+17 verbose request url raw /tcomb-validation
+18 verbose request resolving registry [ 'https://registry.npmjs.org/', './tcomb-validation' ]
+19 verbose request after pass 2, where is https://registry.npmjs.org/tcomb-validation
+20 verbose request no auth needed
+21 info attempt registry request try #1 at 08:44:15
+22 verbose request id 8ef7124e7ff338df
+23 http request GET https://registry.npmjs.org/tcomb-validation
+24 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND registry.npmjs.org
+25 info attempt registry request try #2 at 08:44:56
+26 http request GET https://registry.npmjs.org/tcomb-validation
+27 info retry will retry, error on last attempt: Error: read ECONNRESET
+28 info attempt registry request try #3 at 08:46:51
+29 http request GET https://registry.npmjs.org/tcomb-validation
+30 silly lockFile c96f59bb-tcomb-validation tcomb-validation@*
+31 silly lockFile c96f59bb-tcomb-validation tcomb-validation@*
+32 verbose stack Error: read ECONNRESET
+32 verbose stack     at exports._errnoException (util.js:742:11)
+32 verbose stack     at TCP.onread (net.js:535:26)
+33 verbose cwd /Users/box/Lab/github/stackq
+34 error Darwin 13.4.0
+35 error argv "/Users/box/Lab/local/bin/node" "/Users/box/Lab/local/bin/npm" "install" "tcomb-validation" "-g"
+36 error node v0.11.14
+37 error npm  v2.0.0
+38 error code ECONNRESET
+39 error errno ECONNRESET
+40 error syscall read
+41 error network read ECONNRESET
+41 error network This is most likely not a problem with npm itself
+41 error network and is related to network connectivity.
+41 error network In most cases you are behind a proxy or have bad network settings.
+41 error network
+41 error network If you are behind a proxy, please make sure that the
+41 error network 'proxy' config is set properly.  See: 'npm help config'
+42 verbose exit [ 1, true ]
