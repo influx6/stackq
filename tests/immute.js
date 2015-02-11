@@ -11,6 +11,7 @@ _.Jazz('Immutate specifications',function(k){
   var kc = key.snapshot();
 
   var acg = atom.ghost('c');
+  var asg = atom.ghost('c.e');
 
   k('can i create a object immutate',function($){
     $.sync(function(m){
@@ -41,7 +42,7 @@ _.Jazz('Immutate specifications',function(k){
     });
   }).use(acs.value());
 
-  acs.set(20);
+  asg.set(20);
 
   k('can i mutate value using cursors',function($){
     $.sync(function(m){
