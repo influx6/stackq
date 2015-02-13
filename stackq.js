@@ -5,3 +5,4 @@ require('./lib/ds.js')(as);
 require('./lib/extenders.js')(as);
 
 module.exports = as;
+global.Stackq = as;
